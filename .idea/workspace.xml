@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3f8399c0-b393-4943-be03-b8957a1f2a59" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/EffectiveJavaItem12/src/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectiveJavaItem12/src/B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectiveJavaItem12/src/CaseInsensitiveString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectiveJavaItem12/src/MyClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectiveJavaItem12/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLinkedList/out/production/MyLinkedList/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyLinkedList/out/production/MyLinkedList/Main.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2gRJqZHdflvgvqMyNjzKyjaOkF6" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../woowacourseSource/java-onboarding" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f8399c0-b393-4943-be03-b8957a1f2a59" name="Changes" comment="" />
+      <created>1715654648604</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715654648604</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -3,13 +3,15 @@ import java.io.IOException;
 public class Main {
 
     public void test() throws IOException, InterruptedException {
+        String[] args={};
+
         String javaCode = "public class Solution {\n" +
                 "    public static void main(String[] args) {\n" +
                 "        System.out.println(\"Hello, Java World!\");\n" +
                 "    }\n" +
                 "}";
 
-        ProjectResult projectResult = FileExecute.executeFile(1L, javaCode, "JAVA");
+        ProjectResult projectResult = FileExecute.executeFile(javaCode, "JAVA",args);
         System.out.println(projectResult);
 
         String javaCode1 = "#include <iostream>\n" +
@@ -19,12 +21,12 @@ public class Main {
                 "    return 0;\n" +
                 "}";
 
-        ProjectResult projectResult1 = FileExecute.executeFile(1L, javaCode1, "CPP");
+        ProjectResult projectResult1 = FileExecute.executeFile(javaCode1, "CPP",args);
         System.out.println(projectResult1);
 
         String javaCode2 = "print('Hello, Python World!')";
 
-        ProjectResult projectResult2 = FileExecute.executeFile(1L, javaCode2, "PYTHON");
+        ProjectResult projectResult2 = FileExecute.executeFile(javaCode2, "PYTHON",args);
         System.out.println(projectResult2);
     }
 
@@ -42,21 +44,31 @@ public class Main {
                 "return temp; }\n"+
                 "}";
         String newJavaCode = code.substring(0, code.length() - 1) + javaCode;
-        ProjectResult projectResult = FileExecute.executeFile(1L, newJavaCode, "JAVA");
+        String[] args={"1234"};
+        ProjectResult projectResult = FileExecute.executeFile(newJavaCode, "JAVA",args);
         System.out.println(projectResult);
     }
 
     public void jsTest() throws IOException, InterruptedException{
+        String[] args={};
         String jsCode = "console.log(\"Hello, JS World!\");";
-        ProjectResult projectResult = FileExecute.executeFile(1L, jsCode, "JAVASCRIPT");
+        ProjectResult projectResult = FileExecute.executeFile(jsCode, "JAVASCRIPT",args);
         System.out.println(projectResult);
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
         Main main = new Main();
-//        main.parameterTest();
+        main.parameterTest();
         main.test();
-
         main.jsTest();
+
+//        for(int i=0;i<5;i++){
+//            main.parameterTest();
+//        }
     }
 }
+
+
+
+
+

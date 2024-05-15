@@ -3,19 +3,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class FileExecute {
 
-    public static ProjectResult executeFile(Long projectId, String code, String language) throws IOException, InterruptedException {
+    public static ProjectResult executeFile(String code, String language, String[] testCase) throws IOException, InterruptedException {
 
         String command1, command2;
         ProjectResult response = null;
-        String fileName = FileUtil.makeFileFromCode(projectId, code, language);
+        String fileName = FileUtil.makeFileFromCode(code, language);
 
         switch (language) {
             case "PYTHON" -> {
                 command1 = "python";
-                response = commonProcess(command1, fileName);
+                String[] basicArgs={command1, fileName};
+                String[] args = Stream.concat(Arrays.stream(basicArgs), Arrays.stream(testCase)).toArray(String[]::new);
+                    response = commonProcess(args);
                 FileUtil.deleteFile(fileName);
             }
             case "JAVA" -> {
@@ -26,7 +30,9 @@ public class FileExecute {
                 if (response.getStatus().equals("error")) {
                     break;
                 }
-                response = commonProcess(command2, "Solution");
+                String[] basicArgs={command2, "Solution"};
+                String[] args = Stream.concat(Arrays.stream(basicArgs), Arrays.stream(testCase)).toArray(String[]::new);
+                    response = commonProcess(args);
                 FileUtil.deleteFile("Solution" + ".class");
             }
             case "CPP" -> {
@@ -36,12 +42,16 @@ public class FileExecute {
                 if (response.getStatus().equals("error")) {
                     break;
                 }
-                response = commonProcess("./a.exe", "1");
+                String[] basicArgs={"./a.exe", "1"};
+                String[] args = Stream.concat(Arrays.stream(basicArgs), Arrays.stream(testCase)).toArray(String[]::new);
+                    response = commonProcess(args);
                 FileUtil.deleteFile("./a.exe");
             }
             case "JAVASCRIPT"->{
                 command1 = "node";
-                response = commonProcess(command1, fileName);
+                String[] basicArgs={command1, fileName};
+                String[] args = Stream.concat(Arrays.stream(basicArgs), Arrays.stream(testCase)).toArray(String[]::new);
+                    response = commonProcess(args);
                 FileUtil.deleteFile(fileName);
             }
         }

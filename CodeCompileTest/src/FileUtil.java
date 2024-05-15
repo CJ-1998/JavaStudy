@@ -8,7 +8,7 @@ public class FileUtil {
 
     private static final String DIRECTORY_PATH = "../";
 
-    public static String makeFileFromCode(Long projectId, String str, String language) {
+    public static String makeFileFromCode(String str, String language) {
         BufferedWriter fw;
         File f;
         String fileType = language.equals("PYTHON") ? ".py" : language.equals("JAVA") ? ".java" : language.equals("CPP") ? ".cpp" : ".js";

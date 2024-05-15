@@ -6,7 +6,7 @@ import java.util.List;
 public class JavaCodeGenerator implements CodeGenerator {
 
     @Override
-    public String makeBasicCode(String[] inputParameter, String[] inputParameterValue, String outputParameter) {
+    public String makeBasicCode(String[] inputParameter, String outputParameter) {
 
         List<String> varNames = new ArrayList<>();
 
@@ -16,7 +16,7 @@ public class JavaCodeGenerator implements CodeGenerator {
         for(int index=0;index<inputParameter.length;index++){
             String varName = "a"+index;
             varNames.add(varName);
-            String value = makeInputParameter(inputParameter[index], inputParameterValue[index], index);
+            String value = makeInputParameter(inputParameter[index], index);
             stringBuilder.append(value);
         }
 
@@ -43,7 +43,7 @@ public class JavaCodeGenerator implements CodeGenerator {
     }
 
     @Override
-    public String makeInputParameter(String inputParameter, String inputParameterValue, int index) {
+    public String makeInputParameter(String inputParameter, int index) {
         if(inputParameter.equals("int")){
             StringBuilder sb = new StringBuilder();
             sb.append(inputParameter);

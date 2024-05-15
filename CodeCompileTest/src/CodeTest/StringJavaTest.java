@@ -1,6 +1,8 @@
+package CodeTest;
+
 import codeGenerator.JavaCodeGenerator;
 
-public class StringTest {
+public class StringJavaTest {
     public static void main(String[] args) {
         JavaCodeGenerator javaCodeGenerator = new JavaCodeGenerator();
 //        String temp = javaCodeGenerator.makeInputParameter("String[]", "[1,2,3]",0);
@@ -21,7 +23,7 @@ public class StringTest {
         String[] inputParameterValue = {"1","qwer"};
         String outputParameter = "int";
 
-        String test = javaCodeGenerator.makeBasicCode(inputParameter,inputParameterValue,outputParameter);
+        String test = javaCodeGenerator.makeBasicCode(inputParameter, outputParameter);
 //        System.out.println(test);
 
         String realCode = javaCodeGenerator.addCode(code,test);

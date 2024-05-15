@@ -2,9 +2,9 @@ package codeGenerator;
 
 public interface CodeGenerator {
 
-    public String makeBasicCode(String[] inputParameter, String[] inputParameterValue, String outputParameter);
+    public String makeBasicCode(String[] inputParameter, String outputParameter);
 
-    public String makeInputParameter(String inputParameter, String inputParameterValue, int index);
+    public String makeInputParameter(String inputParameter, int index);
 
     public String makeOutput(String outputParameter);
 

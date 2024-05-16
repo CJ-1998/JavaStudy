@@ -9,7 +9,7 @@ public class StringPythonTest {
 //        String test = pythonCodeGenerator.makeInputParameter("int[][]",1);
 //        System.out.println(test);
 
-        String[] inputParameter = {"int", "String"};
+        String[] inputParameter = {"int", "double", "String", "int[]","double[]","String[]", "int[][]","double[][]","String[][]"};
         String outputParameter = "int";
 
         String allTest = pythonCodeGenerator.makeBasicCode(inputParameter,outputParameter);

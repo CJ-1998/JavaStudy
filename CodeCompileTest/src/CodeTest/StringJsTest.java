@@ -9,7 +9,7 @@ public class StringJsTest {
 //        String temp = javaScriptCodeGenerator.makeInputParameter("String[][]", 0);
 //        System.out.println(temp);
 
-        String[] inputParameter = {"int[]", "String[][]"};
+        String[] inputParameter = {"int", "double", "String", "int[]","double[]","String[]", "int[][]","double[][]","String[][]"};
         String outputParameter = "int";
 
         String basicCode = javaScriptCodeGenerator.makeBasicCode(inputParameter,outputParameter);

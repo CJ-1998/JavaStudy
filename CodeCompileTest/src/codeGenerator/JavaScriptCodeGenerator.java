@@ -116,12 +116,16 @@ public class JavaScriptCodeGenerator implements CodeGenerator{
             sb.append("= arguments[");
             sb.append(index);
             sb.append("];\n");
-            sb.append("const sliceString = temp");
+            sb.append("const sliceString");
+            sb.append(index);
+            sb.append(" = temp");
             sb.append(index);
             sb.append(".slice(1,-1);\n");
             sb.append("const a");
             sb.append(index);
-            sb.append("= sliceString.split('/').map(innerArrayString => {\n");
+            sb.append("= sliceString");
+            sb.append(index);
+            sb.append(".split('/').map(innerArrayString => {\n");
             sb.append("return JSON.parse(innerArrayString);});\n");
             return sb.toString();
         }
@@ -132,12 +136,16 @@ public class JavaScriptCodeGenerator implements CodeGenerator{
             sb.append("= arguments[");
             sb.append(index);
             sb.append("];\n");
-            sb.append("const sliceString = temp");
+            sb.append("const sliceString");
+            sb.append(index);
+            sb.append(" = temp");
             sb.append(index);
             sb.append(".slice(1,-1);\n");
             sb.append("const a");
             sb.append(index);
-            sb.append("= sliceString.split('/').map(innerArrayString => {\n");
+            sb.append("= sliceString");
+            sb.append(index);
+            sb.append(".split('/').map(innerArrayString => {\n");
             sb.append("const string=innerArrayString.replace(/(\\w+)/g, '\"$1\"');\n");
             sb.append("return JSON.parse(string);});\n");
             return sb.toString();

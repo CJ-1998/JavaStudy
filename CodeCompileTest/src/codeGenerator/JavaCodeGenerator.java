@@ -79,17 +79,33 @@ public class JavaCodeGenerator implements CodeGenerator {
         }
         else if(inputParameter.equals("int[]")){
             StringBuilder sb = new StringBuilder();
-            sb.append("String input = args[");
+            sb.append("String input");
+            sb.append(index);
+            sb.append(" = args[");
             sb.append(index);
             sb.append("];\n");
-            sb.append("String[] parts = input.substring(1, input.length() - 1).split(\",\");\n");
+
+            sb.append("String[] parts");
+            sb.append(index);
+            sb.append(" = input");
+            sb.append(index);
+            sb.append(".substring(1, input");
+            sb.append(index);
+            sb.append(".length() - 1).split(\",\");\n");
+
             sb.append(inputParameter);
             sb.append(" ");
             sb.append("a");
             sb.append(index);
-            sb.append(" = new int[parts.length];\n");
-            sb.append("for (int i = 0; i < parts.length; i++) {\n");
-            sb.append("    String str = parts[i];\n");
+            sb.append(" = new int[parts");
+            sb.append(index);
+            sb.append(".length];\n");
+            sb.append("for (int i = 0; i < parts");
+            sb.append(index);
+            sb.append(".length; i++) {\n");
+            sb.append("    String str = parts");
+            sb.append(index);
+            sb.append("[i];\n");
             sb.append("    a");
             sb.append(index);
             sb.append("[i] = Integer.parseInt(str);\n");
@@ -99,10 +115,16 @@ public class JavaCodeGenerator implements CodeGenerator {
         }
         else if(inputParameter.equals("double[]")){
             StringBuilder sb = new StringBuilder();
-            sb.append("String input = args[");
+            sb.append("String input");
+            sb.append(index);
+            sb.append(" = args[");
             sb.append(index);
             sb.append("];\n");
-            sb.append("String[] parts = input.substring(1, input.length() - 1).split(\",\");\n");
+            sb.append("String[] parts = input");
+            sb.append(index);
+            sb.append(".substring(1, input");
+            sb.append(index);
+            sb.append(".length() - 1).split(\",\");\n");
             sb.append(inputParameter);
             sb.append(" ");
             sb.append("a");
@@ -118,29 +140,53 @@ public class JavaCodeGenerator implements CodeGenerator {
         }
         else if(inputParameter.equals("String[]")){
             StringBuilder sb = new StringBuilder();
-            sb.append("String input = args[");
+            sb.append("String input");
+            sb.append(index);
+            sb.append(" = args[");
             sb.append(index);
             sb.append("];\n");
             sb.append(inputParameter);
             sb.append(" ");
             sb.append("a");
             sb.append(index);
-            sb.append(" = input.substring(1, input.length() - 1).split(\",\");\n");
+            sb.append(" = input");
+            sb.append(index);
+            sb.append(".substring(1, input");
+            sb.append(index);
+            sb.append(".length() - 1).split(\",\");\n");
             return sb.toString();
         }
         else if(inputParameter.equals("int[][]")){
             StringBuilder sb = new StringBuilder();
-            sb.append("String input = args[");
+            sb.append("String input");
+            sb.append(index);
+            sb.append(" = args[");
             sb.append(index);
             sb.append("];\n");
-            sb.append("String[] outerParts = input.substring(1, input.length() - 1).split(\"/\");\n");
+
+            sb.append("String[] outerParts");
+            sb.append(index);
+            sb.append(" = input");
+            sb.append(index);
+            sb.append(".substring(1, input");
+            sb.append(index);
+            sb.append(".length() - 1).split(\"/\");\n");
+
             sb.append(inputParameter);
             sb.append(" ");
             sb.append("a");
             sb.append(index);
-            sb.append(" = new int[outerParts.length][];\n");
-            sb.append("for (int i = 0; i < outerParts.length; i++) {\n");
-            sb.append("    String[] innerParts = outerParts[i].substring(1, outerParts[i].length() - 1).split(\",\");\n");
+            sb.append(" = new int[outerParts");
+            sb.append(index);
+            sb.append(".length][];\n");
+            sb.append("for (int i = 0; i < outerParts");
+            sb.append(index);
+            sb.append(".length; i++) {\n");
+            sb.append("    String[] innerParts = outerParts");
+            sb.append(index);
+            sb.append("[i].substring(1, outerParts");
+            sb.append(index);
+            sb.append("[i].length() - 1).split(\",\");\n");
             sb.append("    a");
             sb.append(index);
             sb.append("[i] = new int[innerParts.length];\n");
@@ -154,17 +200,33 @@ public class JavaCodeGenerator implements CodeGenerator {
         }
         else if(inputParameter.equals("double[][]")){
             StringBuilder sb = new StringBuilder();
-            sb.append("String input = args[");
+            sb.append("String input");
+            sb.append(index);
+            sb.append(" = args[");
             sb.append(index);
             sb.append("];\n");
-            sb.append("String[] outerParts = input.substring(1, input.length() - 1).split(\"/\");\n");
+            sb.append("String[] outerParts");
+            sb.append(index);
+            sb.append(" = input");
+            sb.append(index);
+            sb.append(".substring(1, input");
+            sb.append(index);
+            sb.append(".length() - 1).split(\"/\");\n");
             sb.append(inputParameter);
             sb.append(" ");
             sb.append("a");
             sb.append(index);
-            sb.append(" = new double[outerParts.length][];\n");
-            sb.append("for (int i = 0; i < outerParts.length; i++) {\n");
-            sb.append("    String[] innerParts = outerParts[i].substring(1, outerParts[i].length() - 1).split(\",\");\n");
+            sb.append(" = new double[outerParts");
+            sb.append(index);
+            sb.append(".length][];\n");
+            sb.append("for (int i = 0; i < outerParts");
+            sb.append(index);
+            sb.append(".length; i++) {\n");
+            sb.append("    String[] innerParts = outerParts");
+            sb.append(index);
+            sb.append("[i].substring(1, outerParts");
+            sb.append(index);
+            sb.append("[i].length() - 1).split(\",\");\n");
             sb.append("    a");
             sb.append(index);
             sb.append("[i] = new double[innerParts.length];\n");
@@ -179,19 +241,35 @@ public class JavaCodeGenerator implements CodeGenerator {
         }
         else if(inputParameter.equals("String[][]")){
             StringBuilder sb = new StringBuilder();
-            sb.append("String input = args[");
+            sb.append("String input");
+            sb.append(index);
+            sb.append(" = args[");
             sb.append(index);
             sb.append("];\n");
-            sb.append("String[] outerParts = input.substring(1, input.length() - 1).split(\"/\");\n");
+            sb.append("String[] outerParts");
+            sb.append(index);
+            sb.append(" = input");
+            sb.append(index);
+            sb.append(".substring(1, input");
+            sb.append(index);
+            sb.append(".length() - 1).split(\"/\");\n");
             sb.append("\n");
             sb.append(inputParameter);
             sb.append(" ");
             sb.append("a");
             sb.append(index);
-            sb.append(" = new String[outerParts.length][];\n");
+            sb.append(" = new String[outerParts");
+            sb.append(index);
+            sb.append(".length][];\n");
             sb.append("\n");
-            sb.append("for (int i = 0; i < outerParts.length; i++) {\n");
-            sb.append("    String[] innerParts = outerParts[i].substring(1, outerParts[i].length() - 1).split(\",\");\n");
+            sb.append("for (int i = 0; i < outerParts");
+            sb.append(index);
+            sb.append(".length; i++) {\n");
+            sb.append("    String[] innerParts = outerParts");
+            sb.append(index);
+            sb.append("[i].substring(1, outerParts");
+            sb.append(index);
+            sb.append("[i].length() - 1).split(\",\");\n");
             sb.append("    a");
             sb.append(index);
             sb.append("[i] = new String[innerParts.length];\n");

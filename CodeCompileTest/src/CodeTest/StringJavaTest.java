@@ -19,8 +19,7 @@ public class StringJavaTest {
         sb.append("}");
         String code = sb.toString();
 
-        String[] inputParameter = {"int", "String"};
-        String[] inputParameterValue = {"1","qwer"};
+        String[] inputParameter = {"int", "double", "String", "int[]","double[]","String[]", "int[][]","double[][]","String[][]"};
         String outputParameter = "int";
 
         String test = javaCodeGenerator.makeBasicCode(inputParameter, outputParameter);
